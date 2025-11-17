@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Pipeline Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px 40px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .environment-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 20px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .status-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .status-item .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .status-item .label {
+            color: #999;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .status-item .value {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .success-icon {
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="environment-badge">
+            🚀 Environment
+        </div>
+        
+        <h1>¡Hola Mundo!</h1>
+        
+        <p class="subtitle">
+            Pipeline CI/CD implementado exitosamente en AWS<br>
+            con ECS, CodePipeline y Terraform
+        </p>
+
+        <div class="info-box">
+            <h3>✅ Estado del Despliegue</h3>
+            <p>
+                Esta aplicación ha sido desplegada automáticamente a través del pipeline de CI/CD.
+                El contenedor está corriendo en Amazon ECS detrás de un Application Load Balancer.
+            </p>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <div class="icon success-icon">✓</div>
+                <div class="label">Estado</div>
+                <div class="value">Activo</div>
+            </div>
+            <div class="status-item">
+                <div class="icon">🐳</div>
+                <div class="label">Contenedor</div>
+                <div class="value">Nginx</div>
+            </div>
+            <div class="status-item">
+                <div class="icon">☁️</div>
+                <div class="label">Cloud</div>
+                <div class="value">AWS</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Tecnologías:</strong> Docker • ECS • CodePipeline • CodeBuild • Terraform • ALB
+        </div>
+    </div>
+</body>
+</html>
